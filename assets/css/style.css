@@ -11285,8 +11285,10 @@ textarea.form-control-lg {
 .services .large-ft {
   font-size: 1.5rem;
 }
-.services img {
-  transform: scale(1);
+@media (max-width: 575.98px) {
+  .services img {
+    transform: scale(0.8);
+  }
 }
 
 .testimonials {
