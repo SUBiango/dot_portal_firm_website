@@ -11285,6 +11285,9 @@ textarea.form-control-lg {
 .services .large-ft {
   font-size: 1.5rem;
 }
+.services img {
+  transform: scale(1.5);
+}
 
 .testimonials {
   position: relative;
