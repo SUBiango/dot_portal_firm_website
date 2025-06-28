@@ -848,6 +848,12 @@ button:focus {
     outline-offset: 2px;
 }
 
+.nav-link:focus,
+.mobile-nav-link:focus {
+    outline: none;
+    background-color: rgba(232, 73, 29, 0.15);
+}
+
 /* ===== PRINT STYLES ===== */
 @media print {
     .side-nav,
