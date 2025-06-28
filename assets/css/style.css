@@ -97,7 +97,6 @@ button {
     width: var(--nav-width);
     height: 100vh;
     background-color: var(--white);
-    border-right: 1px solid #eee;
     z-index: 1000;
     transition: var(--transition);
     display: flex;
@@ -106,10 +105,9 @@ button {
 
 .nav-header {
     padding: 30px 20px;
-    border-bottom: 1px solid #eee;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .logo img {
@@ -136,35 +134,29 @@ button {
 .nav-menu {
     flex: 1;
     padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav-menu li {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .nav-link {
     display: block;
-    padding: 15px 30px;
+    padding: 12px 20px;
     color: var(--text-light);
     font-weight: 500;
     transition: var(--transition);
-    position: relative;
+    text-align: center;
+    border-radius: var(--border-radius);
 }
 
 .nav-link:hover,
 .nav-link.active {
     color: var(--primary-color);
-    background-color: rgba(232, 73, 29, 0.1);
-}
-
-.nav-link.active::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 4px;
-    background-color: var(--primary-color);
 }
 
 /* ===== MOBILE NAVIGATION ===== */
@@ -253,12 +245,12 @@ button {
     color: var(--text-light);
     font-weight: 500;
     transition: var(--transition);
+    text-align: center;
 }
 
 .mobile-nav-link:hover,
 .mobile-nav-link.active {
     color: var(--primary-color);
-    background-color: rgba(232, 73, 29, 0.1);
 }
 
 /* ===== MAIN CONTENT ===== */
@@ -383,6 +375,8 @@ button {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .product-card {
@@ -851,7 +845,7 @@ button:focus {
 .nav-link:focus,
 .mobile-nav-link:focus {
     outline: none;
-    background-color: rgba(232, 73, 29, 0.15);
+    color: var(--primary-color);
 }
 
 /* ===== PRINT STYLES ===== */
