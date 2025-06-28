@@ -362,6 +362,7 @@ button {
     left: 50%;
     transform: translateX(-50%);
     animation: bounce 2s infinite;
+    cursor: pointer;
 }
 
 .scroll-arrow {
