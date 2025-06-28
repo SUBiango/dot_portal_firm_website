@@ -43,14 +43,10 @@ button {
 /* ===== CSS VARIABLES ===== */
 :root {
     --primary-color: #e8491d;
-    --primary-dark: #d73e17;
     --primary-light: #ff6b42;
-    --secondary-color: #f9f9f9;
     --text-color: #333;
     --text-light: #666;
-    --text-lighter: #999;
     --white: #ffffff;
-    --black: #000000;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
     --border-radius: 8px;
@@ -64,10 +60,6 @@ button {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-}
-
-.highlight {
-    color: var(--primary-color);
 }
 
 .section-header {
@@ -302,13 +294,6 @@ button {
     margin-top: 30px;
 }
 
-.hero-subtitle {
-    font-size: 1.2rem;
-    color: var(--text-light);
-    margin-bottom: 40px;
-    line-height: 1.8;
-}
-
 .floating-shapes {
     position: absolute;
     top: 0;
@@ -446,11 +431,6 @@ button {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-}
-
-.status-badge.available {
-    background-color: #d4edda;
-    color: #155724;
 }
 
 .status-badge.coming-soon {
@@ -733,10 +713,6 @@ button {
         font-size: 2.4rem;
     }
     
-    .hero-subtitle {
-        font-size: 1.1rem;
-    }
-    
     .section-title {
         font-size: 2rem;
     }
@@ -776,10 +752,6 @@ button {
         font-size: 2rem;
     }
     
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-    
     .section-title {
         font-size: 1.8rem;
     }
@@ -794,10 +766,6 @@ button {
     
     .contact-content h2 {
         font-size: 1.8rem;
-    }
-    
-    .hero-visual {
-        height: 300px;
     }
     
     .shape-circle {
