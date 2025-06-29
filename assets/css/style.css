@@ -302,44 +302,111 @@ button {
     bottom: 0;
     pointer-events: none;
     z-index: 1;
+    overflow: hidden;
 }
 
 .shape {
     position: absolute;
-    animation: float 8s ease-in-out infinite;
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
-.shape-circle {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(45deg, var(--primary-color), var(--primary-light));
-    border-radius: 50%;
+/* Brand-focused dot patterns */
+.dots-cluster-1 {
     top: 15%;
     right: 10%;
-    animation-delay: 0s;
+    animation: dotClusterFloat 12s ease-in-out infinite;
 }
 
-.shape-line {
-    width: 80px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary-light), var(--primary-color));
+.dots-cluster-2 {
     top: 60%;
     left: 5%;
-    animation-delay: 2s;
-    transform-origin: center;
+    animation: dotClusterFloat 15s ease-in-out infinite 2s;
 }
 
-.shape-triangle {
-    width: 0;
-    height: 0;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    border-bottom: 40px solid var(--primary-color);
-    top: 25%;
+.dots-cluster-3 {
+    top: 35%;
     left: 15%;
-    animation-delay: 4s;
+    animation: dotClusterFloat 18s ease-in-out infinite 4s;
 }
+
+.dots-portal {
+    top: 25%;
+    right: 25%;
+    animation: portalPulse 10s ease-in-out infinite;
+}
+
+.dots-trail {
+    top: 70%;
+    right: 15%;
+    animation: trailFlow 20s linear infinite;
+}
+
+.dots-constellation {
+    top: 80%;
+    left: 20%;
+    animation: constellationTwinkle 8s ease-in-out infinite;
+}
+
+/* Individual dot styles */
+.dot {
+    position: absolute;
+    background: var(--primary-color);
+    border-radius: 50%;
+    animation: dotPulse 3s ease-in-out infinite;
+}
+
+.dot-small {
+    width: 6px;
+    height: 6px;
+}
+
+.dot-medium {
+    width: 10px;
+    height: 10px;
+}
+
+.dot-large {
+    width: 14px;
+    height: 14px;
+}
+
+/* Dot cluster patterns */
+.dots-cluster-1 .dot:nth-child(1) { top: 0; left: 0; animation-delay: 0s; }
+.dots-cluster-1 .dot:nth-child(2) { top: 10px; left: 20px; animation-delay: 0.3s; }
+.dots-cluster-1 .dot:nth-child(3) { top: 25px; left: 5px; animation-delay: 0.6s; }
+.dots-cluster-1 .dot:nth-child(4) { top: 15px; left: -10px; animation-delay: 0.9s; }
+
+.dots-cluster-2 .dot:nth-child(1) { top: 0; left: 0; animation-delay: 0s; }
+.dots-cluster-2 .dot:nth-child(2) { top: -15px; left: 25px; animation-delay: 0.5s; }
+.dots-cluster-2 .dot:nth-child(3) { top: 20px; left: 30px; animation-delay: 1s; }
+.dots-cluster-2 .dot:nth-child(4) { top: 35px; left: 10px; animation-delay: 1.5s; }
+.dots-cluster-2 .dot:nth-child(5) { top: 10px; left: -15px; animation-delay: 2s; }
+
+.dots-cluster-3 .dot:nth-child(1) { top: 0; left: 0; animation-delay: 0s; }
+.dots-cluster-3 .dot:nth-child(2) { top: 12px; left: 18px; animation-delay: 0.4s; }
+.dots-cluster-3 .dot:nth-child(3) { top: -8px; left: 35px; animation-delay: 0.8s; }
+
+/* Portal effect - dots forming a circle */
+.dots-portal .dot:nth-child(1) { top: 0; left: 15px; }
+.dots-portal .dot:nth-child(2) { top: 10px; left: 25px; }
+.dots-portal .dot:nth-child(3) { top: 25px; left: 15px; }
+.dots-portal .dot:nth-child(4) { top: 10px; left: 5px; }
+.dots-portal .dot:nth-child(5) { top: 12px; left: 15px; } /* center dot */
+
+/* Trail effect */
+.dots-trail .dot:nth-child(1) { top: 0; left: 0px; animation-delay: 0s; }
+.dots-trail .dot:nth-child(2) { top: 5px; left: 15px; animation-delay: 0.2s; }
+.dots-trail .dot:nth-child(3) { top: -5px; left: 30px; animation-delay: 0.4s; }
+.dots-trail .dot:nth-child(4) { top: 10px; left: 45px; animation-delay: 0.6s; }
+.dots-trail .dot:nth-child(5) { top: 0px; left: 60px; animation-delay: 0.8s; }
+.dots-trail .dot:nth-child(6) { top: -8px; left: 75px; animation-delay: 1s; }
+
+/* Constellation pattern */
+.dots-constellation .dot:nth-child(1) { top: 0; left: 0; }
+.dots-constellation .dot:nth-child(2) { top: -10px; left: 20px; }
+.dots-constellation .dot:nth-child(3) { top: 15px; left: 35px; }
+.dots-constellation .dot:nth-child(4) { top: 30px; left: 15px; }
+.dots-constellation .dot:nth-child(5) { top: 20px; left: -5px; }
 
 .scroll-indicator {
     position: absolute;
@@ -653,7 +720,8 @@ button {
     }
 }
 
-@keyframes float {
+/* Brand-focused dot animations */
+@keyframes dotClusterFloat {
     0%, 100% {
         transform: translateY(0px) translateX(0px);
     }
@@ -668,25 +736,86 @@ button {
     }
 }
 
-/* Special animation for the line shape */
-.shape-line {
-    animation: floatRotate 10s ease-in-out infinite;
-}
-
-@keyframes floatRotate {
+@keyframes portalPulse {
     0%, 100% {
-        transform: translateY(0px) translateX(0px) rotate(0deg);
+        transform: scale(1) rotate(0deg);
+        opacity: 0.7;
     }
     25% {
-        transform: translateY(-20px) translateX(15px) rotate(45deg);
+        transform: scale(1.3) rotate(90deg);
+        opacity: 1;
     }
     50% {
-        transform: translateY(-30px) translateX(-10px) rotate(90deg);
+        transform: scale(0.8) rotate(180deg);
+        opacity: 0.5;
     }
     75% {
-        transform: translateY(-15px) translateX(20px) rotate(135deg);
+        transform: scale(1.1) rotate(270deg);
+        opacity: 0.9;
     }
 }
+
+@keyframes trailFlow {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.7;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+}
+
+@keyframes constellationTwinkle {
+    0%, 100% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+    20% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    40% {
+        opacity: 0.6;
+        transform: scale(0.9);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    80% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+}
+
+/* Individual dot pulse variations */
+@keyframes dotPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.6;
+        background: var(--primary-color);
+    }
+    50% {
+        transform: scale(1.4);
+        opacity: 1;
+        background: var(--primary-light);
+    }
+}
+
+/* Individual dot animation delays */
+.dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(2) { animation-delay: 0.3s; }
+.dot:nth-child(3) { animation-delay: 0.6s; }
+.dot:nth-child(4) { animation-delay: 0.9s; }
+.dot:nth-child(5) { animation-delay: 1.2s; }
+.dot:nth-child(6) { animation-delay: 1.5s; }
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1024px) {
