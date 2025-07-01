@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initAccordion();
     initCopyToClipboard();
     initAnimations();
-    initTypingEffect();
 });
 
 // ===== NAVIGATION FUNCTIONALITY =====
@@ -284,66 +283,6 @@ function initAnimations() {
 }
 
 // ===== TYPING EFFECT =====
-function initTypingEffect() {
-    const heroTitle = document.getElementById('heroTitle');
-    if (!heroTitle) return;
-    
-    const text = heroTitle.getAttribute('data-text');
-    if (!text) return;
-    
-    // Check if user prefers reduced motion
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
-    if (prefersReducedMotion) {
-        // Show text immediately without typing effect
-        heroTitle.textContent = text;
-        heroTitle.classList.add('typing-complete');
-        return;
-    }
-    
-    // Clear the initial text and add typing class
-    heroTitle.textContent = '';
-    heroTitle.classList.add('typing');
-    
-    let charIndex = 0;
-    const baseTypingSpeed = 85; // Base milliseconds per character (slower than before)
-    
-    function typeChar() {
-        if (charIndex < text.length) {
-            const currentChar = text.charAt(charIndex);
-            heroTitle.textContent += currentChar;
-            charIndex++;
-            
-            // Add slight variation in typing speed for more natural feel
-            let speed = baseTypingSpeed;
-            
-            // Slower for punctuation and end of sentences
-            if (currentChar === '.' || currentChar === ',' || currentChar === '!') {
-                speed = baseTypingSpeed * 2.5;
-            }
-            // Pause slightly after spaces (between words)
-            else if (currentChar === ' ') {
-                speed = baseTypingSpeed * 1.3;
-            }
-            // Add small random variation
-            else {
-                speed = baseTypingSpeed + (Math.random() * 25 - 12);
-            }
-            
-            setTimeout(typeChar, Math.max(speed, 20));
-        } else {
-            // Typing complete, remove cursor after a short delay
-            setTimeout(() => {
-                heroTitle.classList.remove('typing');
-                heroTitle.classList.add('typing-complete');
-            }, 1500);
-        }
-    }
-    
-    // Start typing after a short delay to ensure everything is loaded
-    setTimeout(typeChar, 1000);
-}
-
 // ===== UTILITY FUNCTIONS =====
 function throttle(func, limit) {
     let inThrottle;
