@@ -927,7 +927,7 @@ button {
 
 @media (max-width: 480px) {
     .hero-container {
-        min-height: 70vh;
+        min-height: 80vh;
         padding: 10px 15px 0 15px;
         justify-content: flex-start;
         align-items: flex-start;
