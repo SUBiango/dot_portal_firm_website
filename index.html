@@ -3,319 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dot Portal - Modern software development company creating innovative digital solutions for real-world problems. We build user-friendly applications for everyone.">
-    <meta name="keywords" content="software development, web development, mobile apps, digital solutions, user-friendly software, sharia-compliant, ethical software">
+    <meta name="description" content="Dot Portal builds software for real people. Not for Silicon Valley. Not for investors. For you.">
+    <meta name="keywords" content="software development, ethical software, sharia-compliant, Sierra Leone tech, African software">
     <meta name="author" content="Dot Portal">
     <link rel="canonical" href="https://www.dotportalsl.com/">
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.dotportalsl.com/">
-    <meta property="og:title" content="Dot Portal - Ethical Software Development">
-    <meta property="og:description" content="We build user-friendly software for real-world problems, guided by ethical, sharia-compliant principles.">
+    <meta property="og:title" content="Dot Portal - Software for Real People">
+    <meta property="og:description" content="We build software for real people. Not for Silicon Valley. For you.">
     <meta property="og:image" content="https://www.dotportalsl.com/images/logo.png">
-    <meta property="og:image:alt" content="Dot Portal Logo">
-
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.dotportalsl.com/">
-    <meta property="twitter:title" content="Dot Portal - Ethical Software Development">
-    <meta property="twitter:description" content="We build user-friendly software for real-world problems, guided by ethical, sharia-compliant principles.">
-    <meta property="twitter:image" content="https://www.dotportalsl.com/images/logo.png">
-    <meta property="twitter:image:alt" content="Dot Portal Logo">
+    <meta property="twitter:title" content="Dot Portal - Software for Real People">
+    <meta property="twitter:description" content="We build software for real people. Not for Silicon Valley. For you.">
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Dot Portal",
-      "url": "https://www.dotportalsl.com/",
-      "logo": "https://www.dotportalsl.com/images/logo.png",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+232-76-123456",
-        "contactType": "customer service",
-        "email": "contact@dotportalsl.com"
-      },
-      "sameAs": [
-        "https://www.facebook.com/dotportalsl"
-      ]
-    }
-    </script>
-
-    <title>Dot Portal - Ethical Software Development Company</title>
+    <title>Dot Portal - Software for Real People</title>
     
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/images/favicon/site.webmanifest">
     
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Custom CSS -->
+    <!-- Styles -->
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-    <!-- Side Navigation -->
-    <nav class="side-nav" id="sideNav">
-        <div class="nav-header">
-            <a href="#hero" class="logo">
-                <img src="/images/logo.png" alt="Dot Portal Logo">
+    <!-- Navigation -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <a href="#" class="nav-logo">
+                <img src="/images/logo.png" alt="Dot Portal">
             </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span>
+            <div class="nav-links" id="navLinks">
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#philosophy" class="nav-link">Philosophy</a>
+                <a href="#contact" class="nav-link nav-link--cta">Get in touch</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
                 <span></span>
                 <span></span>
             </button>
-        </div>
-        <ul class="nav-menu">
-            <li><a href="#hero" class="nav-link active">Home</a></li>
-            <li><a href="#products" class="nav-link">Products</a></li>
-            <li><a href="#philosophy" class="nav-link">Philosophy</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-    </nav>
+        </nav>
+    </header>
 
-<<<<<<< HEAD
-    <!-- Mobile Navigation -->
-    <nav class="mobile-nav" id="mobileNav">
-        <div class="mobile-nav-container">
-            <a href="#hero" class="mobile-logo">
-                <img src="/images/logo.png" alt="Dot Portal Logo">
-            </a>
-            <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle mobile navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="hero-line">We build</span>
+                <span class="hero-line hero-line--accent">software.</span>
+            </h1>
+            <p class="hero-subtitle">
+                But not the kind solving problems nobody has. Our products address real needs for you, your cousin, and the auntie selling fish down the street.
+            </p>
         </div>
-        <div class="mobile-menu" id="mobileMenu">
-            <ul>
-                <li><a href="#hero" class="mobile-nav-link">Home</a></li>
-                <li><a href="#products" class="mobile-nav-link">Products</a></li>
-                <li><a href="#philosophy" class="mobile-nav-link">Philosophy</a></li>
-                <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
-            </ul>
+        <div class="hero-scroll">
+            <span class="hero-scroll-text">Scroll</span>
+            <div class="hero-scroll-line"></div>
         </div>
-    </nav>
+    </section>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Hero Section -->
-        <section id="hero" class="hero-section">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <h1 class="hero-title">We make software, but not for VC Investors.</h1>
-                    <h1 class="hero-title hero-title-second">We make it for you, your cousin, and the guy selling airtime down the street.</h1>
-                </div>
-                <div class="floating-shapes">
-                    <!-- Dot clusters representing connectivity -->
-                    <div class="shape dots-cluster-1">
-                        <div class="dot dot-medium"></div>
-                        <div class="dot dot-small"></div>
-                        <div class="dot dot-large"></div>
-                        <div class="dot dot-small"></div>
+    <!-- Products -->
+    <section class="products" id="products">
+        <div class="section-container">
+            <header class="section-header">
+                <span class="section-label">What we're making</span>
+                <h2 class="section-title">For people like you who have better things to do than fight with bad software.</h2>
+            </header>
+            
+            <div class="product-list">
+                <article class="product">
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-name">Korporty</h3>
+                            <span class="product-status">Coming Soon</span>
+                        </div>
+                        <p class="product-description">Korporty allows anyone to pay you effortlessly. Your job is to run your business, not to run after payments.</p>
                     </div>
-                    
-                    <div class="shape dots-cluster-2">
-                        <div class="dot dot-small"></div>
-                        <div class="dot dot-medium"></div>
-                        <div class="dot dot-small"></div>
-                        <div class="dot dot-large"></div>
-                        <div class="dot dot-medium"></div>
-                    </div>
-                    
-                    <div class="shape dots-cluster-3">
-                        <div class="dot dot-large"></div>
-                        <div class="dot dot-small"></div>
-                        <div class="dot dot-medium"></div>
-                    </div>
-                    
-                    <!-- Portal effect - circular dot arrangement -->
-                    <div class="shape dots-portal">
-                        <div class="dot dot-small"></div>
-                        <div class="dot dot-small"></div>
-                        <div class="dot dot-small"></div>
-                        <div class="dot dot-small"></div>
-                        <div class="dot dot-medium"></div> <!-- center dot -->
-                    </div>
-                    
-                    <!-- Flowing trail representing data/connection -->
-                    <div class="shape dots-trail">
-                        <div class="dot dot-small"></div>
-                        <div class="dot dot-small"></div>
-                        <div class="dot dot-small"></div>
-                        <div class="dot dot-small"></div>
-                        <div class="dot dot-small"></div>
-                        <div class="dot dot-small"></div>
-                    </div>
-                    
-                    <!-- Constellation pattern -->
-                    <div class="shape dots-constellation">
-                        <div class="dot dot-small"></div>
-                        <div class="dot dot-medium"></div>
-                        <div class="dot dot-small"></div>
-                        <div class="dot dot-small"></div>
-                        <div class="dot dot-medium"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="scroll-indicator">
-                <div class="scroll-arrow">
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-            </div>
-        </section>
-
-        <!-- Products Section -->
-        <section id="products" class="products-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">What We're Building</h2>
-                    <p class="section-subtitle">For folks who have better things to do than wrestle with bad software.</p>
-                </div>
-                <div class="products-grid">
-                    <div class="product-card">
+                    <div class="product-visual">
                         <div class="product-icon">
                             <i class="fas fa-credit-card"></i>
                         </div>
-                        <h3 class="product-title">Korporty</h3>
-                        <p class="product-description"> A secure, cash-free way to get paid — no change drama, no delays. </p>
-                        <div class="product-status">
-                            <span class="status-badge coming-soon">Coming Soon</span>
-                        </div>
                     </div>
-                    <div class="product-card">
+                </article>
+                
+                <article class="product">
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-name">Luma</h3>
+                            <span class="product-status">Coming Soon</span>
+                        </div>
+                        <p class="product-description">A marketplace for anyone to shop or sell from their sofa, including grandma. Seriously.</p>
+                    </div>
+                    <div class="product-visual">
                         <div class="product-icon">
-                            <i class="fas fa-shopping-cart"></i>
+                            <i class="fas fa-store"></i>
                         </div>
-                        <h3 class="product-title">Lummar</h3>
-                        <p class="product-description">An e-commerce platform where your auntie could run her own shop.</p>
-                        <div class="product-status">
-                            <span class="status-badge coming-soon">Coming Soon</span>
-                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="philosophy" id="philosophy">
+        <div class="section-container">
+            <header class="section-header">
+                <span class="section-label">What we believe</span>
+                <h2 class="section-title">The stuff we won't shut up about.</h2>
+            </header>
+            
+            <div class="philosophy-list">
+                <div class="philosophy-item" tabindex="0">
+                    <div class="philosophy-header">
+                        <span class="philosophy-number">01</span>
+                        <h3 class="philosophy-title">Why we do this?</h3>
+                    </div>
+                    <div class="philosophy-content">
+                        <p>We like solving problems. We also like to keep the candles burning.</p>
+                    </div>
+                </div>
+
+                <div class="philosophy-item" tabindex="0">
+                    <div class="philosophy-header">
+                        <span class="philosophy-number">02</span>
+                        <h3 class="philosophy-title">Sharia compliance only.</h3>
+                    </div>
+                    <div class="philosophy-content">
+                        <p>No shady business — No interest. No fraud. No screwing people over. This isn't negotiable.</p>
+                    </div>
+                </div>
+
+                <div class="philosophy-item" tabindex="0">
+                    <div class="philosophy-header">
+                        <span class="philosophy-number">03</span>
+                        <h3 class="philosophy-title">What we build.</h3>
+                    </div>
+                    <div class="philosophy-content">
+                        <p>We fix issues that annoy us and our folks. Chances are it annoys you too.</p>
+                    </div>
+                </div>
+
+                <div class="philosophy-item" tabindex="0">
+                    <div class="philosophy-header">
+                        <span class="philosophy-number">04</span>
+                        <h3 class="philosophy-title">Our design philosophy.</h3>
+                    </div>
+                    <div class="philosophy-content">
+                        <p>Useful first. Usable second. Pretty third. Flash? Dead last or never.</p>
+                    </div>
+                </div>
+
+                <div class="philosophy-item" tabindex="0">
+                    <div class="philosophy-header">
+                        <span class="philosophy-number">05</span>
+                        <h3 class="philosophy-title">We're not for hire.</h3>
+                    </div>
+                    <div class="philosophy-content">
+                        <p>No client work. No custom builds. We make what we want to exist in the world.</p>
+                    </div>
+                </div>
+
+                <div class="philosophy-item" tabindex="0">
+                    <div class="philosophy-header">
+                        <span class="philosophy-number">06</span>
+                        <h3 class="philosophy-title">We're not building to flip.</h3>
+                    </div>
+                    <div class="philosophy-content">
+                        <p>Our products are not startups dressed up for sale. They're products we're building to last.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Philosophy Section -->
-        <section id="philosophy" class="philosophy-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Our Philosophy</h2>
-                    <p class="section-subtitle">What keeps us honest when nobody’s watching.</p>
+    <!-- Contact / Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-cta">
+                    <span class="section-label">Let's talk</span>
+                    <a href="mailto:hello@dotportalsl.com" class="footer-email">
+                        Drop a line — hello@dotportalsl.com
+                        <span class="footer-email-arrow">→</span>
+                    </a>
                 </div>
-                <div class="philosophy-content">
-                    <div class="accordion" id="philosophyAccordion">
-                        <div class="accordion-item">
-                            <div class="accordion-header" data-target="innovation">
-                                <h3>Why are we in business?</h3>
-                                <i class="fas fa-plus accordion-icon"></i>
-                            </div>
-                            <div class="accordion-content" id="innovation">
-                                <p>We're here to solve real problems and make a good living without cutting corners.</p>
-                                <blockquote class="philosophy-quote">
-                                    “The purpose of trade is not profit alone, but to fulfill communal needs and preserve justice.” — Imam al-Ghazali
-                                </blockquote>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <div class="accordion-header" data-target="quality">
-                                <h3>Our commitment to sharia-compliance</h3>
-                                <i class="fas fa-plus accordion-icon"></i>
-                            </div>
-                            <div class="accordion-content" id="quality">
-                                <p>We run things the right way. No interest, no fraud, no shady shortcuts.
-                                    No fooling customers, no exploiting employees, no screwing partners.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <div class="accordion-header" data-target="collaboration">
-                                <h3>How we pick products to work on?</h3>
-                                <i class="fas fa-plus accordion-icon"></i>
-                            </div>
-                            <div class="accordion-content" id="collaboration">
-                                <p>We fix stuff that bugs us first. If it helps us, it’ll probably help you too.</p>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <div class="accordion-header" data-target="sustainability">
-                                <h3>What is software for us?</h3>
-                                <i class="fas fa-plus accordion-icon"></i>
-                            </div>
-                            <div class="accordion-content" id="sustainability">
-                                <p>Software should solve problems — plain and simple.
-                                    We put usability first, flash last.</p>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <div class="accordion-header" data-target="transparency">
-                                <h3>We don't do client work</h3>
-                                <i class="fas fa-plus accordion-icon"></i>
-                            </div>
-                            <div class="accordion-content" id="transparency">
-                                <p>We're not an agency. We don't build on demand. We build what we believe in.</p>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <div class="accordion-header" data-target="community">
-                                <h3>We're not building to flip</h3>
-                                <i class="fas fa-plus accordion-icon"></i>
-                            </div>
-                            <div class="accordion-content" id="community">
-                                <p>Our products are not startups dressed up for sale. They're products we're building to last.</p>
-                            </div>
-                    </div>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/dotportalsl" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/971567439014" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
                 </div>
             </div>
-        </section>
-
-        <!-- Contact/Footer Section -->
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <h2>Drop us a line</h2>
-                        <div class="contact-methods">
-                            <a href="mailto:hello@dotportal.com" class="contact-method">
-                                <!-- <i class="fas fa-envelope"></i> -->
-                                <span>contact@dotportalsl.com</span>
-                                <button class="copy-btn" data-copy="hello@dotportal.com">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </a>
-                        </div>
-                        <div class="social-links">
-                            <a href="https://www.facebook.com/dotportalsl" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="https://wa.me/971567439014" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-whatsapp"></i>
-                            </a>
-                        </div>
-                    </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2025 Dot Portal. Still here. Still building.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy</a>
+                    <a href="/terms-of-service.html">Terms</a>
                 </div>
             </div>
-            <div class="footer">
-                <div class="container">
-                    <p>&copy; 2025 Dot Portal. All rights reserved.</p>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </footer>
 
-    <!-- Custom JavaScript -->
     <script src="/assets/js/script.js"></script>
 </body>
 </html>
