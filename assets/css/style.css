@@ -36,6 +36,7 @@
 
     --container-max:    1160px;
     --container-narrow: 860px;
+    --philosophy-num-size: 26px;
 
     --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
     --ease-inout: cubic-bezier(0.4, 0, 0.2, 1);
@@ -115,14 +116,14 @@ button {
 
 .header.scrolled {
     padding: var(--sp-4) 0;
-    background-color: rgba(250, 247, 242, 0.94);
+    background-color: color-mix(in srgb, var(--color-bg) 94%, transparent);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--color-rule);
 }
 
 [data-theme="dark"] .header.scrolled {
-    background-color: rgba(16, 14, 11, 0.94);
+    background-color: color-mix(in srgb, var(--color-bg) 94%, transparent);
 }
 
 .nav {
@@ -600,7 +601,7 @@ button {
     font-size: 0.6875rem;
     font-weight: 500;
     color: var(--color-ink-faint);
-    min-width: 26px;
+    min-width: var(--philosophy-num-size);
     letter-spacing: 0.05em;
     transition: color var(--dur-fast);
 }
@@ -637,10 +638,10 @@ button {
     position: relative;
     z-index: 1;
 }
-.philosophy-item.active .philosophy-content { max-height: 300px; }
+.philosophy-item.active .philosophy-content { max-height: 1200px; }
 
 .philosophy-body {
-    padding: 0 var(--sp-8) var(--sp-8) calc(26px + var(--sp-6));
+    padding: 0 var(--sp-8) var(--sp-8) calc(var(--philosophy-num-size) + var(--sp-6));
 }
 .philosophy-body p {
     font-size: 1rem;
@@ -959,4 +960,83 @@ button {
     html { scroll-behavior: auto; }
     .hero::before { animation: none; }
     .reveal { opacity: 1; transform: none; }
+}
+
+/* ================================================================
+   ENHANCEMENTS — Hero visuals, layout polish, copy improvements
+   ================================================================ */
+
+/* === HERO: Large faint DP wordmark === */
+.hero-wordmark {
+    position: absolute;
+    right: -0.05em;
+    bottom: -0.2em;
+    font-family: var(--font-display);
+    font-size: clamp(14rem, 30vw, 28rem);
+    font-weight: 900;
+    font-variation-settings: 'opsz' 144;
+    line-height: 0.85;
+    color: var(--color-ink);
+    opacity: 0.028;
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: -0.06em;
+    z-index: 0;
+    transition: color var(--dur-slow) var(--ease-inout);
+}
+[data-theme="dark"] .hero-wordmark {
+    opacity: 0.04;
+}
+
+/* === HERO: Floating product pill badges === */
+.hero-products {
+    position: absolute;
+    bottom: var(--sp-10);
+    right: var(--sp-8);
+    display: flex;
+    gap: var(--sp-3);
+    z-index: 1;
+    opacity: 0;
+    animation: fadeIn 0.8s ease 1.3s forwards;
+}
+
+.hero-product-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-ink-faint);
+    border: 1px solid var(--color-rule);
+    border-radius: 100px;
+    padding: var(--sp-2) var(--sp-4);
+    background: transparent;
+    transition:
+        color var(--dur-fast),
+        border-color var(--dur-fast),
+        background-color var(--dur-slow) var(--ease-inout);
+}
+.hero-product-pill i {
+    font-size: 0.5625rem;
+    color: var(--color-accent);
+}
+
+/* === PHILOSOPHY: Watermark shows faintly on hover too === */
+.philosophy-item:hover::before {
+    opacity: 0.045;
+}
+
+/* === FOOTER: Prevent email wrapping uglily on tiny screens === */
+.footer-email {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* === MOBILE: hide hero pills on very small screens === */
+@media (max-width: 480px) {
+    .hero-products { display: none; }
+    .hero-wordmark { font-size: 10rem; opacity: 0.025; }
 }

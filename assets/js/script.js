@@ -12,6 +12,15 @@ function init() {
     initPhilosophy();
     initSmoothScroll();
     initScrollReveal();
+    initFooterYear();
+}
+
+function initFooterYear() {
+    const footerCopyright = document.querySelector('.footer-copyright');
+    if (!footerCopyright) return;
+
+    const year = new Date().getFullYear();
+    footerCopyright.textContent = `© ${year} Dot Portal. Still here. Still building.`;
 }
 
 // === THEME TOGGLE ===
@@ -45,7 +54,7 @@ function applyTheme(html, theme) {
     if (theme === 'dark') {
         html.setAttribute('data-theme', 'dark');
     } else {
-        html.removeAttribute('data-theme');
+        html.setAttribute('data-theme', 'light');
     }
 }
 
@@ -65,6 +74,7 @@ function updateToggleIcon(btn, theme) {
 // === HEADER SCROLL EFFECT ===
 function initHeader() {
     const header = document.getElementById('header');
+    if (!header) return;
     const handle = () => header.classList.toggle('scrolled', window.scrollY > 80);
     window.addEventListener('scroll', handle, { passive: true });
     handle();
@@ -73,6 +83,7 @@ function initHeader() {
 // === MOBILE NAVIGATION ===
 function initMobileNav() {
     const toggle = document.getElementById('navToggle');
+    if (!toggle) return;
     let isOpen = false;
 
     const currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
@@ -129,18 +140,45 @@ function initMobileNav() {
 // === PHILOSOPHY ACCORDION ===
 function initPhilosophy() {
     const items = document.querySelectorAll('.philosophy-item');
+    if (!items.length) return;
+
+    function setItemExpanded(item, expanded) {
+        const content = item.querySelector('.philosophy-content');
+        if (!content) return;
+
+        if (expanded) {
+            item.classList.add('active');
+            content.style.maxHeight = `${content.scrollHeight}px`;
+        } else {
+            item.classList.remove('active');
+            content.style.maxHeight = '0px';
+        }
+    }
+
+    // Sync inline max-heights with any pre-existing active state.
+    items.forEach(item => {
+        setItemExpanded(item, item.classList.contains('active'));
+    });
 
     items.forEach(item => {
         item.addEventListener('click', () => {
             const isActive = item.classList.contains('active');
-            items.forEach(i => i.classList.remove('active'));
-            if (!isActive) item.classList.add('active');
+            items.forEach(i => setItemExpanded(i, false));
+            if (!isActive) setItemExpanded(item, true);
         });
 
         item.addEventListener('keydown', e => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
                 item.click();
+            }
+        });
+    });
+
+    window.addEventListener('resize', () => {
+        items.forEach(item => {
+            if (item.classList.contains('active')) {
+                setItemExpanded(item, true);
             }
         });
     });
@@ -155,7 +193,8 @@ function initSmoothScroll() {
             const target = document.querySelector(href);
             if (!target) return;
             e.preventDefault();
-            const headerH = document.getElementById('header').offsetHeight;
+            const header = document.getElementById('header');
+            const headerH = header ? header.offsetHeight : 0;
             const top = target.getBoundingClientRect().top + window.scrollY - headerH;
             window.scrollTo({ top, behavior: 'smooth' });
         });

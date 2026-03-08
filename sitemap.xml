@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.dotportalsl.com/#hero</loc>
-    <lastmod>2025-06-29</lastmod>
+    <loc>https://www.dotportalsl.com/</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://www.dotportalsl.com/#products</loc>
-    <lastmod>2025-06-29</lastmod>
-    <priority>0.80</priority>
+    <loc>https://www.dotportalsl.com/privacy-policy.html</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
   </url>
   <url>
-    <loc>https://www.dotportalsl.com/#philosophy</loc>
-    <lastmod>2025-06-29</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.dotportalsl.com/#contact</loc>
-    <lastmod>2025-06-29</lastmod>
-    <priority>0.80</priority>
+    <loc>https://www.dotportalsl.com/terms-of-service.html</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
   </url>
 </urlset>

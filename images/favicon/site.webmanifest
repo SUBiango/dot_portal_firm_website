@@ -1,6 +1,7 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Dot Portal",
+    "short_name": "Dot Portal",
+    "description": "Software for real people.",
     "icons": [
         {
             "src": "android-chrome-192x192.png",
@@ -13,7 +14,8 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "display": "standalone"
+    "theme_color": "#faf7f2",
+    "background_color": "#faf7f2",
+    "display": "standalone",
+    "start_url": "/"
 }
